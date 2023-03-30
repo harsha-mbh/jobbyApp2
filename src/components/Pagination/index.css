@@ -1,0 +1,23 @@
+.page-numbers {
+  color: white;
+  font-family: 'Bree Serif';
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+.pagination-container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+}
+.page-click-button {
+  background-color: transparent;
+  border: 1px solid white;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  font-size: 20px;
+  padding: 2px 2px;
+  cursor: pointer;
+}

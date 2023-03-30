@@ -1,0 +1,10 @@
+.job-link {
+  text-decoration: none;
+}
+.job-item-card {
+  background-color: gray;
+  border-radius: 8px;
+  border: none;
+  padding: 5px 5px;
+  margin-bottom: 15px;
+}
