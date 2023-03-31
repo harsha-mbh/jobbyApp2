@@ -78,6 +78,17 @@ class Jobs extends Component {
     }
   }
 
+  onClearAllFilters = () => {
+    this.setState(
+      {
+        searchInput: '',
+        employmentTypeQuery: [],
+        minimumpackageQuery: '',
+      },
+      this.getJobsData,
+    )
+  }
+
   onClickPrevPage = () => {
     const {currentPage} = this.state
     if (currentPage > 1) {
@@ -111,6 +122,8 @@ class Jobs extends Component {
     }))
     this.setState({
       jobsList: updatedData,
+      currentPage: 1,
+      searchInput: '',
       totalPages: Math.ceil(updatedData.length / 5),
       jobsApiStatus: apiStatusConstants.success,
     })
@@ -173,7 +186,7 @@ class Jobs extends Component {
 
   renderProfileSuccessView = () => {
     const {profileDetails} = this.state
-    const {name, profileImageUrl, shortBio} = profileDetails
+    const {profileImageUrl} = profileDetails
     return (
       <div className="profile-bg-container">
         <img src={profileImageUrl} alt="profile" className="profile-image" />
@@ -296,6 +309,7 @@ class Jobs extends Component {
         minimumpackageQuery={minimumpackageQuery}
         employmentTypeQuery={employmentTypeQuery}
         onChangeEmploymentType={this.onChangeEmploymentType}
+        onClearAllFilters={this.onClearAllFilters}
       />
     )
   }

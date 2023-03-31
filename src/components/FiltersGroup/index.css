@@ -21,3 +21,10 @@
   font-family: 'Roboto';
   color: white;
 }
+.clear-all-btn {
+  background-color: transparent;
+  border: 1px solid gray;
+  color: white;
+  cursor: pointer;
+  padding: 5px 5px;
+}

@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './index.css'
 
@@ -38,6 +39,10 @@ class Login extends Component {
 
   render() {
     const {username, password, errorMsg, showErrorMsg} = this.state
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
     return (
       <div className="login-page-container">
         <div className="login-container">
@@ -76,7 +81,7 @@ class Login extends Component {
             <button type="submit" className="login-btn">
               Login
             </button>
-            {showErrorMsg && <p className="error-msg">{errorMsg}</p>}
+            {showErrorMsg && <p className="error-msg">*{errorMsg}</p>}
           </form>
         </div>
       </div>

@@ -8,7 +8,12 @@ const FiltersGroup = props => {
     onChangeEmploymentType,
     minimumpackageQuery,
     employmentTypeQuery,
+    onClearAllFilters,
   } = props
+
+  const onClickClearBtn = () => {
+    onClearAllFilters()
+  }
 
   const onSalaryRangeChange = event => {
     const {id} = event.target
@@ -69,6 +74,9 @@ const FiltersGroup = props => {
           ))}
         </ul>
       </div>
+      <button type="button" className="clear-all-btn" onClick={onClickClearBtn}>
+        Clear All
+      </button>
     </div>
   )
 }
